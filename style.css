@@ -82,6 +82,10 @@ body{
     z-index: 100;
 }
 
+a{
+    color: white;
+}
+
 
 .period {
     font-size: 14px;
