@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Inter;
 }
 body{
     background: #0F2027;  /* fallback for old browsers */
@@ -79,10 +83,40 @@ body{
 }
 
 
+.period {
+    font-size: 14px;
+}
 
+.job-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+.company-title{
+    font-size: 14px;
+    font-family: "EB Garamond", serif;
+}
 
+code {
+    font-family: Consolas, "Courier New", monospace;
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 90%;
+}
 
-
+.language-tag {
+    display: inline-block;
+    font-family: Consolas, "Courier New", monospace;
+    background-color: #4a90e2;
+    color: #ffffff;
+    padding: 2px 8px;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+}
 
 .timeline{
 
