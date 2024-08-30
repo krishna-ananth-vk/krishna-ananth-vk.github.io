@@ -36,9 +36,11 @@ body{
     color: whitesmoke;
     z-index: 999;
 }
-.tag{
+.tagline{
     color: green;
     z-index: 999;
+    display: flex;
+    align-items: center;
 }
 .fa-angle-double-right{
     vertical-align: middle;
@@ -123,6 +125,13 @@ code {
 }
 .resume{
     background-color: #923e3e;
+}
+
+.social-item{
+    margin-right: 8px;
+}
+.social-item > i {
+    font-size: 1.2rem;
 }
 
 .timeline{
