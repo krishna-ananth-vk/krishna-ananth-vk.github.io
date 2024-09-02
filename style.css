@@ -1,6 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+:root {
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2,12,27,0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100,255,218,0.1);
+    --pink: #f57dff;
+    --blue: #57cbff;
+    --font-sans: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;
+    --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
+    --border-radius: 4px;
+    --nav-height: 100px;
+    --nav-scroll-height: 70px;
+    --tab-height: 42px;
+    --tab-width: 120px;
+    --easing: cubic-bezier(0.645,0.045,0.355,1);
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    --hamburger-width: 30px;
+    --ham-before: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
+    --ham-before-active: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
+    --ham-after: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19);
+    --ham-after-active: bottom 0.1s ease-out,transform 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -9,8 +48,8 @@
 }
 body{
     background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0F2027, #203A43, #2C5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  Chrome 10-25, Safari 5.1-6 */
+    background:  #0F2027; /* Chrome 10-25, Safari 5.1-6 */
     
 }
 .banner{
@@ -25,10 +64,15 @@ body{
     /* background:rgb(34, 29, 29); */
     /* background: greenyellow; */
     background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0F2027, #203A43, #2C5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
    
+}
+.welcome-note{
+    font-size: 16px;
+    font-weight: 500;
+    color: #64ffda;
+    z-index: 999;   
+    margin-bottom: 24px;
 }
 .title{
     font-size: 42px;
@@ -36,6 +80,63 @@ body{
     color: whitesmoke;
     z-index: 999;
 }
+.caption{
+    font-size: 42px;
+    font-weight: 800;
+    z-index: 999;
+    margin-bottom: 32px;
+    color: rgba(245, 245, 245, 0.622);
+}
+
+.introduction {
+    font-size: 16px;
+    color: whitesmoke;
+    z-index: 999;   
+    margin-bottom: 16px;
+    width: 35vw;
+}
+.company{
+    color: #64ffda;
+}
+
+.resume{
+    position: relative;
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.75rem;
+    font-size: var(--fz-sm);
+    font-family: Consolas, "Courier New", monospace;
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.resume::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--green);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.resume:hover{
+   color: var(--navy);
+}
+.resume:hover::before {
+    transform: scaleX(1);
+}
+
+
 .tagline{
     color: green;
     z-index: 999;
@@ -77,12 +178,6 @@ body{
     float: right;
 }
 
-.tile{
-   
-    margin: 8px;
-    
-    z-index: 100;
-}
 
 a{
     color: white;
@@ -114,17 +209,14 @@ code {
 .language-tag {
     display: inline-block;
     font-family: Consolas, "Courier New", monospace;
-    background-color: #4a90e2;
-    color: #ffffff;
+    background-color: var(--green);
+    color: var(--navy);
     padding: 2px 8px;
     margin: 2px;
     border-radius: 4px;
     font-size: 13px;
     font-weight: bold;
     margin-top: 4px;
-}
-.resume{
-    background-color: #923e3e;
 }
 
 .social-item{
@@ -197,9 +289,48 @@ code {
     border: #33e03f;
 }
 
+.project-section{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
+.project-heading {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 0px 40px;
+    width: 100%;
+    font-size: clamp(26px, 5vw, var(--fz-heading));
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    line-height: 1.1;
+}
 
+.project-heading::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -5px;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--lightest-navy);
+}
+
+.tile{
+    margin: 8px;
+    z-index: 100;
+}
+
+.proj-title{
+    font-weight: 500;
+    color: var(--green);
+}
 
 
 .proj{
@@ -208,15 +339,11 @@ code {
     font-size: 32px;
     color: whitesmoke;
     font-weight: 200;
-    padding-bottom: 16px;
-    border-bottom: 2px whitesmoke solid;
-    
 }
 
 .p-item{
     margin: auto;
     width: 90%;
-    height: 50vh;
     background-color: #203A43;
     font-size: 16px;
     padding: 16px;
@@ -227,8 +354,9 @@ code {
 }
 
 .p-item a{
-    margin-left: ;
     color: beige;
+    margin-right: 4px;
+    margin-top: 4px;
 }
 
 .p-item .fas{
@@ -254,7 +382,9 @@ code {
         margin-top: -70px;
         width: 100vw;
     }
-    
+    .introduction {
+        width:80vw;
+    }
 
 
 }
