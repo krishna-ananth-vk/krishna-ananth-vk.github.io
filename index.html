@@ -1,256 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <title>Ananthakrishnan VK</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="banner">
-        <div class="welcome-note">Hi, my name is</div>
-        <div class="title">Ananthakrishnan</div>
-        <div class="caption">I build things for Web.</div>
-        <div class="introduction">
-          I’m a software engineer specializing in developing cutting-edge
-          software solutions for hospitals. Currently, I’m focused on building
-          accessible, patient-centered products at
-          <span class="company">Nuchange</span>.
-        </div>
-        <div>
-          <div>
-            <a
-              href="Resume.pdf"
-              download="Ananthakrishnan's Resume.pdf"
-              class="resume"
-              title="Download Resume"
-            >
-              <span class="">
-                <i class="bi bi-download"></i>
-                Resume
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="social">
-          <a
-            href="http://www.github.com/krishna-ananth-vk"
-            title="Github"
-            class="social-item"
-          >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ananthakrishnan VK | Senior Software Developer</title>
+  <meta name="description"
+    content="Senior Software Developer at Caze Labs. Specializing in React, Cisco Intersight integrations, and Data Pipelines.">
+  <meta name="keywords" content="Ananthakrishnan VK, Caze Labs, Cisco Intersight, Telemetry, VMware ESXi, React, Go">
+  <meta name="author" content="Ananthakrishnan VK">
+  <meta name="theme-color" content="#f97316">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://krishna-ananth-vk.github.io/">
+  <meta property="og:title" content="Ananthakrishnan VK | Senior Software Developer">
+  <meta property="og:description"
+    content="Specializing in React development and Infrastructure/Storage integrations for Cisco Intersight.">
+  <meta property="og:image" content="https://krishna-ananth-vk.github.io/assets/og-image.jpg">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+
+      --bg-body: #fafafa;
+      --bg-card: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+
+
+      --accent: #f97316;
+      --accent-light: #fff7ed;
+
+      --border-color: #1f2937;
+      --border-width: 2px;
+
+      --shadow-hard: 4px 4px 0px 0px var(--accent);
+      --shadow-hover: 2px 2px 0px 0px var(--accent);
+
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --container-width: 800px;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+    }
+
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+
+    .header {
+      background-color: var(--bg-card);
+      padding: 40px;
+      border: var(--border-width) solid var(--border-color);
+      box-shadow: var(--shadow-hard);
+      text-align: left;
+    }
+
+    .welcome-note {
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      line-height: 1;
+      font-weight: 700;
+      margin: 10px 0 20px 0;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 2px;
+    }
+
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text-main);
+      color: white;
+      padding: 12px 24px;
+      font-weight: 600;
+      border: 2px solid var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    .btn-main:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      font-size: 1.4rem;
+      color: var(--text-main);
+    }
+
+    .social-icon:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background-color: var(--border-color);
+      opacity: 0.1;
+    }
+
+
+    .timeline-container {
+      padding: 0 10px;
+    }
+
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--border-color);
+      padding-left: 30px;
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .marker {
+      position: absolute;
+      left: -39px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      background: var(--bg-card);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .marker.current {
+      background: var(--accent);
+    }
+
+    .period {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .role {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .org {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+
+    .job-desc {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 12px;
+      max-width: 650px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    code.snippet {
+      display: block;
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: monospace;
+      border-left: 3px solid var(--accent);
+      color: #4b5563;
+    }
+
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    @media (min-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: var(--border-width) solid var(--border-color);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-hard);
+      border-color: var(--accent);
+    }
+
+    .proj-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .proj-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .proj-links {
+      display: flex;
+      gap: 15px;
+      margin-top: auto;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 15px;
+    }
+
+    .proj-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .proj-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid #eee;
+      padding-top: 25px;
+      /* Monospace for the nerdy terminal look */
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background-color: var(--accent);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="welcome-note">
+        Hello, world<span class="cursor"></span>
+      </div>
+      <h1 class="title">Ananthakrishnan VK</h1>
+      <p class="intro-text">
+        I am a Senior Software Developer at <span class="highlight">Caze Labs</span>, serving as the <strong>UI
+          Lead</strong> for the frontend engineering team.
+        Concurrently, I operate as an <strong>Infrastructure Consultant</strong> architecting storage integrations,
+        telemetry pipelines, and orchestration workflows for Cisco Intersight.
+      </p>
+
+      <div class="actions">
+        <a href="Resume.pdf" download="Ananthakrishnan_Resume.pdf" class="btn-main" title="Download Resume">
+          Download Resume <i class="bi bi-download"></i>
+        </a>
+
+        <div class="social-links">
+          <a href="http://www.github.com/krishna-ananth-vk" title="Github" class="social-icon">
             <i class="bi bi-github"></i>
           </a>
-          <a
-            href="https://medium.com/@krishnaananthvk"
-            class="social-item"
-            title="Medium"
-          >
-            <i class="bi bi-medium"></i>
+          <a href="https://linkedin.com/in/krishna-ananth-vk" class="social-icon" title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
           </a>
-          <br />
+          <a href="mailto:krishnaananthvk@gmail.com" class="social-icon" title="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
         </div>
       </div>
-      <div class="profile">
-        <div class="tile timeline">
+    </header>
+
+    <section>
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline-container">
+        <div class="timeline">
           <div class="timeline-item">
-            <div class="marker green"></div>
-            <div class="content">
-              <p class="period">March 2021 - Present</p>
-              <p>
-                <span class="job-title">Frontend Developer</span>
-                <br />
-                <span class="company-title">Nuchange Informatics</span>
-                <br />
-                <span class="language-tag">JavaScript</span>
-                <span class="language-tag">React</span>
-                <br />
-                <span class="language-tag">Flutter</span>
-                <span class="language-tag">Redux</span>
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="marker"></div>
-            <div class="content">
-              <p class="period">Sept 2020 - Feb 2021</p>
+            <div class="marker current"></div>
+            <div class="timeline-content">
+              <span class="period">Feb 2025 - Present</span>
+              <div class="role">Senior Software Developer</div>
+              <span class="org">Caze Labs</span>
 
-              <span class="job-title">Fullstack Intern</span>
-              <br />
-              <span class="company-title">Katha</span>
-              <br />
-              <span class="language-tag">JavaScript</span>
-              <span class="language-tag">Ruby</span>
-              <br />
-              <span class="language-tag">React</span>
-              <span class="language-tag">Ruby on Rails</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="marker"></div>
-            <div class="content">
-              <p class="period">Aug 2016 - Aug 2020</p>
-              <p>
-                <span class="job-title">
-                  B Tech in Computer Science and Engineering
-                </span>
-                <br />
-                <span class="company-title"
-                  >Rajiv Gandhi Institute of Technology</span
-                >
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="marker"></div>
-            <div class="content">
-              <p class="period">July 2014 - May 2016</p>
-              <p>
-                <span class="job-title"> HSE in Computer Science </span>
-                <br />
-                <span class="company-title">St. George HSS</span>
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="marker"></div>
-            <div class="content">
-              <p class="period">June 2011 - May 2014</p>
-              <p>
-                <span class="job-title"> SSLC </span>
-                <br />
-                <span class="company-title"> St. Aloysius HSS</span>
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="marker"></div>
-            <div class="content">
-              <p class="period">2012</p>
-              <p>
-                <span class="job-title"> Wrote first line of code </span>
-                <br />
-                <code>print "hello world"</code>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="project-section">
-          <div>
-            <h2 class="project-heading">Projects</h2>
-          </div>
-          <div class="tile proj">
-            <div class="p-item">
-              <div class="proj-title">Visual Question Answering</div>
+              <div class="job-desc" style="margin-bottom: 12px;">
+                <strong style="color:var(--text-main); display:block; margin-bottom:4px;">
+                  Infrastructure Consultant (Contract)
+                </strong>
+                Architecting storage integrations and telemetry pipelines for Cisco Intersight
+                . Responsible for enhancing device orchestration, managing Intersight CVA deployments on
+                VMware ESXi, and developing Go-based CLI tools to streamline ETL workflows.
+              </div>
 
-              A question image co-attention Visual Question Answering system
-              that predicts the answer of a given question related to an Image
-              while integrating outside knowledge using NLP and Deep Learning.
+              <div class="job-desc">
+                <strong style="color:var(--text-main); display:block; margin-bottom:4px;">
+                  UI Lead
+                </strong>
+                Leading the frontend engineering team by establishing coding standards and mentoring junior
+                developers. Responsibilities include conducting technical interviews, performing
+                rigorous code reviews, and refactoring the codebase to ensure clean separation of concerns.
+              </div>
 
-              <br />
-              <br />
-
-              <a
-                href="https://www.kaggle.com/nostringsattached/visualquestionanswering"
-                target="_new"
-                >kaggle notebook <i class="fas fa-external-link-alt"></i>
-              </a>
-              <br />
-              <br />
-
-              <a href="https://arxiv.org/abs/1505.00468" target="_new"
-                >Paper <i class="fas fa-external-link-alt"></i
-              ></a>
-              <br />
-              <br />
-              <a href="https://www.visualqa.org" target="_new"
-                >Visualqa <i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="tile proj">
-            <div class="p-item">
-              <div class="proj-title">CGPC</div>
-
-              Application to play fantasy league as a part of the
-              inter-department football championship
-
-              <br />
-              <br />
-              <a
-                href="https://github.com/the-code-builder/CGPC/blob/master/app/build/outputs/apk/debug/app-debug.apk"
-                target="_new"
-                >DOWNLOAD<i class="fas fa-external-link-alt"></i>
-              </a>
-
-              <br /><br />
-              <a href="https://github.com/the-code-builder/CGPC" target="_new"
-                >Github<i class="fas fa-external-link-alt"></i>
-              </a>
-              <br />
-              <br />
-
-              <a href="https://cgpc-6615.web.app/" target="_new"
-                >Web <i class="fas fa-external-link-alt"></i
-              ></a>
-              <br />
-              <br />
-            </div>
-          </div>
-          <div class="tile proj">
-            <div class="p-item">
-              <div class="proj-title">RITU2020</div>
-
-              Android based application for RITU 2020 - National level Techno-
-              cultural festival.
-
-              <div class="links">
-                <a
-                  href="https://www.behance.net/gallery/97534549/RITU-APP-DESIGN"
-                  target="_new"
-                  >Design on Behance <i class="fas fa-external-link-alt"></i
-                ></a>
-
-                <a href="https://www.instagram.com/rit.utsav/g" target="_new"
-                  >Ritu20 on Intagram<i class="fas fa-external-link-alt"></i
-                ></a>
+              <div class="tags">
+                <span class="tag">Go</span>
+                <span class="tag">Cisco Intersight</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">VMware ESXi</span>
+                <span class="tag">React</span>
+                <span class="tag">Team Leadership</span>
               </div>
             </div>
           </div>
-          <div class="tile proj">
-            <div class="p-item">
-              <div class="proj-title">Golazo</div>
-              Application to play fantasy league as a part of the
-              inter-department football championship
 
-              <br />
-              <br />
 
-              <a href="https://github.com/the-code-builder/Golazo" target="_new"
-                >Github<i class="fas fa-external-link-alt"></i>
-              </a>
-              <br />
-              <br />
+          <div class="timeline-item">
+            <div class="marker"></div>
+            <div class="timeline-content">
+              <span class="period">March 2021 - Feb 2025</span>
+              <div class="role">Frontend Developer</div>
+              <span class="org">Nuchange Informatics</span>
 
-              <a
-                href="https://www.behance.net/gallery/97534549/RITU-APP-DESIGN"
-                target="_new"
-                >Design on Behance <i class="fas fa-external-link-alt"></i
-              ></a>
-              <br />
-              <br />
+              <p class="job-desc">
+                Spearheaded the development of hospital management ecosystems using React and Flutter. Built
+                real-time analytics dashboards using WebSockets and developed specialized
+                Kiosk/TV applications with raw byte-code printer integration (ESC/POS) for token management
+                . Architected automated CI/CD pipelines on cloud VMs using GoCD
+                and advocated for TypeScript adoption to enhance codebase robustness.
+              </p>
+
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Flutter</span>
+                <span class="tag">Redux</span>
+                <span class="tag">WebSockets</span>
+                <span class="tag">GoCD</span>
+                <span class="tag">TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="marker"></div>
+            <div class="timeline-content">
+              <span class="period">Sept 2020 - Feb 2021</span>
+              <div class="role">Fullstack Intern</div>
+              <span class="org">Katha</span>
+
+              <p class="job-desc">
+                Engineered high-volume content scraping pipelines using Ruby and Nokogiri to aggregate news
+                data. Implemented a personalized push notification engine via Firebase Cloud
+                Messaging (FCM) to boost user retention. Collaborated closely with design teams to
+                execute a complete UI/UX overhaul of the core news application.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Ruby on Rails</span>
+                <span class="tag">React</span>
+                <span class="tag">Nokogiri</span>
+                <span class="tag">Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="marker"></div>
+            <div class="timeline-content">
+              <span class="period">Aug 2016 - Aug 2020</span>
+              <div class="role">B.Tech in CSE</div>
+              <span class="org">RIT, Govt. Engineering College</span>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Selected Projects</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div>
+            <div class="proj-name">CVSnap</div>
+            <p class="proj-desc">
+              <span style="display:block; margin-bottom:8px; color:var(--text-main); font-weight:600;">
+                Track Jobs. Generate Resumes.
+              </span>
+              An AI-powered ATS tracking platform that uses LLMs to generate context-aware resume insights.
+            </p>
+          </div>
+          <div class="proj-links">
+            <a href="https://cvsnap.live/" target="_blank" class="proj-link">
+              Live App <i class="bi bi-globe"></i>
+            </a>
+            <a href="https://github.com/krishna-ananth-vk/ats-ui" target="_blank" class="proj-link">
+              Code <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="proj-name">Visual Question Answering</div>
+            <p class="proj-desc">A VQA system using PyTorch and Deep Learning to predict answers related to input
+              images.</p>
+          </div>
+          <div class="proj-links">
+            <a href="https://www.kaggle.com/nostringsattached/visualquestionanswering" target="_blank"
+              class="proj-link">
+              Kaggle <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="https://arxiv.org/abs/1505.00468" target="_blank" class="proj-link">
+              Paper <i class="bi bi-file-text"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="proj-name">Golazo - Fantasy League</div>
+            <p class="proj-desc">Web application for playing fantasy leagues for the inter-department football
+              championship.</p>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/the-code-builder/Golazo" target="_blank" class="proj-link">
+              Github <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="proj-name">RITU 2020 App</div>
+            <p class="proj-desc">Official Android application for RITU 2020, a National level Techno-cultural festival.
+            </p>
+          </div>
+          <div class="proj-links">
+            <a href="https://www.behance.net/gallery/97534549/RITU-APP-DESIGN" target="_blank" class="proj-link">
+              Behance <i class="bi bi-behance"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer">
+      <div style="margin-bottom: 8px;">
+        <span style="color:var(--accent)">➜</span>
+        <span style="color:var(--text-main); font-weight:bold;">~</span>
+        <span>echo "Thanks for visiting."</span>
+      </div>
+      <div>
+        &copy; 2025 Ananthakrishnan VK.
+      </div>
     </div>
 
-    <script></script>
-  </body>
+  </div>
+</body>
+
 </html>
